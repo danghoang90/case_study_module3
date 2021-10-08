@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,56 +14,8 @@
     <title>Lunch Food</title>
     <link rel="icon" href="{{asset('images/logo.png')}}">
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
-<div id="Welcome">
-    <!---Start navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar fixed-top  navbar-light bg-light">
-        <a class="navbar-brand" href="#Welcome">
-            <img src="{{asset('images/logo.png')}}" width="50" height="50" class="d-inline-block" alt=""> Lunch Food
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#Welcome">Welcome</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#ListMenu"> List Menu</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#Menu">Menu</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Register</a>
-                </li>
-{{--                <li class="nav-item">--}}
-{{--                    <a href="#" class="language" rel="it-IT"><img src="{{asset('images/italy.ico')}}" class="flag" alt="Italiano"></a>--}}
-{{--                    <a href="index.html" class="language" rel="en-En"><img src="{{asset('images/english.ico')}}" class="flag" alt="English"></a>--}}
-{{--                </li>--}}
-            </ul>
-        </div>
-    </nav>
-    <!--- End Navigation Bar -->
-    <!--- Start Carousel -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-block w-100 img-fluid img-slider" src="https://khoanhkhacthanglong.vn/wp-content/uploads/2020/05/b4-e1588994466260.jpg" alt="First slide">
-                <div class="carousel-caption">
-                    <h2>Welcome!</h2>
-                    <p>...</p>
-                </div>
-            </div>
+    <body class="antialiased">
+        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             <div class="carousel-item">
                 <img class="d-block w-100 img-fluid img-slider" src="https://afamilycdn.com/2019/12/1/photo-1575164080086-1575164080095165449684.png" alt="Second slide">
                 <div class="carousel-caption">
@@ -86,8 +39,7 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-    </div>
-</div>
+
 <!--- End of Carousel -->
 
     <!--- Start of Menu-->
@@ -183,12 +135,13 @@
 <div class="row bg-light">
     <div class="col-md-3" data-aos="slide-up">
         <div class="card">
-            <div class="card-header btn"  data-toggle="collapse" data-target="#noidungcard1" aria-expanded="true"
+                <div class="card-header btn"  data-toggle="collapse" data-target="#noidungcard1" aria-expanded="true"
              data-parent="#myaccordion">
             Header của Card 1
-            </div>
-        <div class="card-body collapse show"  data-toggle="collapse"  aria-expanded="false" id="noidungcard1">
+                </div>
+            <div class="card-body collapse show"  data-toggle="collapse"  aria-expanded="false" id="noidungcard1">
             <img width="100%" src="https://camnang.bibomart.com.vn//wp-content/media/2019/11/fast_food.jpg" alt="">
+            </div>
         </div>
     </div>
 
@@ -214,8 +167,6 @@
         </div>
     </div>
  </div>
-
-</div>
     <!--- End of Restaurant -->
 
     <div class="row footer bg-light">
