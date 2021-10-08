@@ -1,6 +1,8 @@
 <?php
 
+
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FoodController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/create', [FoodController::class, 'create'])->name('foods.create');
+Route::post('/create', [FoodController::class, 'store'])->name('foods.store');
 
 Route::get('/login', [AuthController::class, 'showFormLogin'])->name('auth.formLogin');
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
-Route::get('/register', [AuthController::class, 'showFormRegister'])->name('auth.register');
+Route::get('/register', [AuthController::class, 'showFormRegister'])->name('auth.formRegister');
+Route::post('/register', [AuthController::class, 'register'])->name('auth.register');

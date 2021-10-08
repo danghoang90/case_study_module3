@@ -6,7 +6,8 @@
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">Registration Info</h2>
-                    <form method="POST">
+                    <form method="POST" action="{{ route('auth.formRegister') }}">
+                        @csrf
                         <div class="input-group">
                             <input class="input--style-2" type="text" placeholder="Name" name="name">
                         </div>
@@ -24,7 +25,7 @@
                         </div>
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="class">
+                                <select name="role">
                                     <option disabled="disabled" selected="selected">Role</option>
                                     <option>User</option>
                                     <option>Customer</option>
