@@ -25,7 +25,7 @@ class CreateFoodsTable extends Migration
             $table->integer('promotional_price');
             $table->integer('service_price');
             $table->string('explain_service_price');
-            $table->unsignedBigInteger('service_price_id');
+            $table->unsignedBigInteger('service_price_id')->nullable();
             $table->time('prepare_time');
             $table->string('discount_code')->nullable();
             $table->string('count_discount_code')->nullable();
