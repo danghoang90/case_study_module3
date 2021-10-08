@@ -72,7 +72,7 @@ body{
 }
 
 @media screen and (max-width : 506px){
- 
+
  .only-mobile{
   visibility:visible;
   }
@@ -84,11 +84,10 @@ body{
 	padding-top: 20px;
 }
 .social-icon{
-	font-size:28; 
+	font-size:28px;
 }
-
-footer{
-	position: fixed;
-	bottom: 0px;
-	padding-top: 20px;
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

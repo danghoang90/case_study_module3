@@ -16,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/create', [FoodController::class, 'create'])->name('foods.create');
 Route::post('/create', [FoodController::class, 'store'])->name('foods.store');
 
-
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
