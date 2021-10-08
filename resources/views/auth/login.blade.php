@@ -6,7 +6,7 @@
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">Login</h2>
-                    <form method="POST" action="{{ route('auth.formLogin') }}">
+                    <form method="POST" action="{{ route('auth.login') }}">
                         @csrf
                         <div class="input-group">
                             <input class="input--style-2" type="email" placeholder="Enter email" name="email">
