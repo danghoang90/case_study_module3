@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FoodController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/create', [FoodController::class, 'create'])->name('foods.create');
+Route::post('/create', [FoodController::class, 'store'])->name('foods.store');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
