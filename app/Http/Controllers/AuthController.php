@@ -21,7 +21,7 @@ class AuthController extends Controller
     {
         $data = $request->only('email', 'password');
         if (Auth::attempt($data)) {
-            dd(1);
+            return view('home.index');
         } else {
             session()->flash('error-login', 'Tài khoản không tồn tại');
             return back();

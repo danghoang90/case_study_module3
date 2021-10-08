@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,9 +24,7 @@ Route::prefix('foods')->group(function () {
     Route::post('{id}/edit', [FoodController::class, 'update'])->name('foods.update');
     Route::get('/{id}/destroy', [FoodController::class, 'destroy'])->name('foods.destroy');
 });
-
-Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
-
+Route::get('/home', [HomeController::class, 'index'])->name('home.index');
 Route::get('/login', [AuthController::class, 'showFormLogin'])->name('auth.formLogin');
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::get('/register', [AuthController::class, 'showFormRegister'])->name('auth.formRegister');

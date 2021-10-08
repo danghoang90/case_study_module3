@@ -1,7 +1,7 @@
 @extends('backend.layouts.master')
 @section('title','Thêm mới món ăn')
 @section('content')
-    <h1 class="mt-4">Thêm mới sách</h1>
+    <h1 class="mt-4">Thêm mới món ăn</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="">Trang chủ</a></li>
         <li class="breadcrumb-item"><a href="{{route('foods.index')}}">Danh sách món ăn</a></li>

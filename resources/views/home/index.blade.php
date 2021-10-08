@@ -23,7 +23,7 @@
 			  	<div class="collapse navbar-collapse" id="navbarText">
 			    	<ul class="navbar-nav ml-auto">
 			      		<li class="nav-item">
-			        		<a class="nav-link" href="#Welcome">Welcome</a>
+			        		<a class="nav-link" href="#Welcome">Welcome {{auth()->user()->name}}</a>
 			      		</li>
 					    <li class="nav-item">
 					    	<a class="nav-link" href="#Menu">Menu</a>
@@ -32,14 +32,14 @@
                             <a class="nav-link" href="#List">List</a>
                         </li>
 					    <li class="nav-item">
-					    	<a class="nav-link" href="#">Login</a>
+					    	<a class="nav-link" href="{{route('auth.formLogin')}}">Login</a>
 					    </li>
 					    <li class="nav-item">
-					    	<a class="nav-link" href="#">Register</a>
+					    	<a class="nav-link" href="{{route('auth.formRegister')}}">Register</a>
 					    </li>
 					    <li class="nav-item">
 					    	<a href="#" class="language" rel="it-IT"><img src="images/italy.ico" class="flag" alt="Italiano"></a>
-					    	<a href="index.html" class="language" rel="en-En"><img src="images/english.ico" class="flag" alt="English"></a>
+					    	<a href="index.blade.php" class="language" rel="en-En"><img src="images/english.ico" class="flag" alt="English"></a>
 					    </li>
 				    </ul>
 				</div>

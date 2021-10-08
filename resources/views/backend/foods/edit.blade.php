@@ -1,62 +1,146 @@
 @extends('backend.layouts.master')
-@section('title','Danh sách món ăn')
+@section('title','Chính sửa món ăn')
 @section('content')
-    <h1 class="mt-4">Danh sách sách</h1>
+    <h1 class="mt-4">Chỉnh sửa món ăn</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="">Trang chủ</a></li>
-        <li class="breadcrumb-item active">Danh sách món ăn</li>
+        <li class="breadcrumb-item"><a href="{{route('foods.index')}}">Danh sách món ăn</a></li>
+        <li class="breadcrumb-item active">Chỉnh sửa món ăn</li>
     </ol>
-    @if (Session::has('success'))
-        <p class="text-success" id="text-success">
-            <i class="fa fa-check" aria-hidden="true"></i>
-            {{ Session::get('success') }}
-        </p>
-    @endif
-    <div class="card mb-4">
-        <div class="card-header">
-            <h3 class="card-title">
-                <a class="btn btn-success" href="{{ route('foods.create') }}">Thêm mới</a>
-            </h3>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <p class="card-title">Chỉnh sửa món ăn</p>
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ route('foods.store') }}" class="form" method="post"
+                              enctype="multipart/form-data">
+                            @csrf
+                            <div class="form-group">
+                                <lable>Tên</lable>
+                                <strong class="text-danger">(*)</strong>
+                                <input type="text" value="{{ old('name') }}"
+                                       class="form-control @error('name') is-invalid @enderror"
+                                       name="name">
+                                @error('name')
+                                <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Địa chỉ</label>
+                                <strong class="text-danger">(*)</strong>
+                                <input type="text" value="{{ old('address') }}"
+                                       class="form-control @error('address') is-invalid  @enderror"
+                                       name="address">
+                                @error('address')
+                                <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <table>
+                                <tr>
+                                    <div class="form-group">
+                                        <td><label>Thời gian mở cửa</label>
+                                            <strong class="text-danger">(*)</strong></td>
+                                        <td>
+                                            <select name="open_time" id="time">
+                                                <option disabled value="">Choose A Time</option>
+                                                <option value="00:00">00:00</option>
+                                            </select></td>
+                                    </div>
+                                </tr>
+                                <tr>
+                                    <div class="form-group">
+                                        <td><label>Thời gian đóng cửa</label>
+                                            <strong class="text-danger">(*)</strong></td>
+                                        <td><select name="close_time" id="time">
+                                                <option disabled value="">Choose A Time</option>
+                                                <option value="00:00">00:00</option>
+                                            </select></td>
+                                    </div>
+                                </tr>
+                            </table>
+                            <div class="form-group">
+                                <label for="image">Ảnh</label>
+                                <strong class="text-danger">(*)</strong>
+                                <input type="file" name="image" class="form-control-file">
+                            </div>
+                            </br>
+                            <div class="form-group">
+                                <table>
+                                    <tr>
+                                        <td><label style="margin-bottom: 40px">Ghi chú</label></td>
+                                        <td><textarea name="note" cols="40" rows="2"></textarea></td>
+                                </table>
+                                </tr>
+                            </div>
+                            <div class="form-group">
+                                <label>Giá tiền</label>
+                                <strong class="text-danger">(*)</strong>
+                                <input type="number" value="{{ old('price') }}"
+                                       class="form-control @error('price') is-invalid  @enderror"
+                                       name="price">
+                                @error('price')
+                                <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Giá khuyến mãi</label>
+                                <strong class="text-danger">(*)</strong>
+                                <input type="number" value="{{ old('promotional_price') }}"
+                                       class="form-control @error('promotional_price') is-invalid  @enderror"
+                                       name="promotional_price">
+                                @error('promotional_price')
+                                <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Phí dịch vụ</label>
+                                <strong class="text-danger">(*)</strong>
+                                <input type="number" value="{{ old('service_price') }}"
+                                       class="form-control @error('service_price') is-invalid  @enderror"
+                                       name="service_price">
+                                @error('service_price')
+                                <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Giải thích phí dịch vụ</label>
+                                <strong class="text-danger">(*)</strong>
+                                <input type="text" value="{{ old('explain_service_price') }}"
+                                       class="form-control @error('explain_service_price') is-invalid  @enderror"
+                                       name="explain_service_price">
+                                @error('explain_service_price')
+                                <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Thời gian chuẩn bị</label>
+                                <strong class="text-danger">(*)</strong>
+                                <select name="prepare_time" id="time">
+                                    <option disabled value="">Choose A Time</option>
+                                    <option value="00:00:00">00:00</option>
+                                </select></div>
+                            <div class="form-group">
+                                <label>Tag</label>
+                                <strong class="text-danger">(*)</strong>
+                                <input type="text" value="{{ old('tag') }}"
+                                       class="form-control @error('tag') is-invalid  @enderror"
+                                       name="tag">
+                                @error('tag')
+                                <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            </br>
+                            <button type="submit" class="btn btn-primary">Lưu</button>
+                            <button class="btn btn-secondary"
+                                    onclick="window.history.go(-1); return false;">Hủy
+                            </button>
+                            <p>Trường <strong class="text-danger">(*)</strong> là trường bắt buộc!</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card-header">
-            <i class="fas fa-table me-1"></i>
-            Danh sách món ăn
-        </div>
-        <div class="card-body">
-            <table id="datatablesSimple">
-                <thead>
-                <tr>
-                    <th>STT</th>
-                    <th>Tên</th>
-                    <th>Địa chỉ</th>
-                    <th>Ảnh</th>
-                    <th>Giá tiền</th>
-                    <th>Giá KM</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($foods as $key=>$food)
-                    <tr id="book-{{$food->id}}">
-                        <td>{{++$key}}</td>
-                        <td>{{$food->name}}</td>
-                        <td>{{$food->address}}</td>
-                        <td><img src="{{ asset('storage/'.$book->image) }}" style="width: 100%">
-                        </td>
-                        <td>{{number_format($food->price)}}</td>
-                        <td>
-                            <a href="{{route('.edit',['id'=>$book->id])}}" class="btn btn-primary">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                            <a data-id="{{$book->id}}"
-                               class="btn btn-danger delete-book">
-                                <i class="fas fa-trash"></i>
-                            </a>
-                        </td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
-        </div>
-    </div>
 @endsection
