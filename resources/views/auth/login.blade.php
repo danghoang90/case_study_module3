@@ -27,6 +27,9 @@
                             <div class="alert alert-warning">{{ session()->get('error-login') }}</div>
                         @endif
                         <div class="p-t-30">
+                                <a href="{{ url('/auth/redirect/google') }}" class="alert alert-danger"><i class="fa fa-google"></i> Google</a>
+                        </div>
+                        <div class="p-t-30">
                             <a href="{{ route('auth.register') }}">
                                 <p class="text-center m-0">Don't have an account? Sign up</p>
                             </a>
