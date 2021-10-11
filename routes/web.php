@@ -29,3 +29,10 @@ Route::get('/login', [AuthController::class, 'showFormLogin'])->name('auth.formL
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::get('/register', [AuthController::class, 'showFormRegister'])->name('auth.formRegister');
 Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
+
+Route::prefix('menu')->group(function () {
+    Route::get('/bestSell',[\App\Http\Controllers\MenuController::class,'bestSell'])->name('menu.bestSell');
+    Route::get('/topView',[\App\Http\Controllers\MenuController::class,'topView'])->name('menu.topView');
+    Route::get('/fastFood',[\App\Http\Controllers\MenuController::class,'fastFood'])->name('menu.fastFood');
+    Route::get('/discount',[\App\Http\Controllers\MenuController::class,'discount'])->name('menu.discount');
+});

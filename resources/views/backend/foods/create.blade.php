@@ -4,7 +4,7 @@
     <h1 class="mt-4">Thêm mới món ăn</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="">Trang chủ</a></li>
-        <li class="breadcrumb-item"><a href="{{route('foods.index')}}">Danh sách món ăn</a></li>
+        <li class="breadcrumb-item"><a href="{{route('menu.index')}}">Danh sách món ăn</a></li>
         <li class="breadcrumb-item active">Thêm mới món ăn</li>
     </ol>
     <div class="container-fluid">
@@ -15,7 +15,7 @@
                         <p class="card-title">Thêm mới món ăn</p>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('foods.store') }}" class="form" method="post"
+                        <form action="{{ route('menu.store') }}" class="form" method="post"
                               enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">

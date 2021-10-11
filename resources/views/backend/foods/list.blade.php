@@ -9,7 +9,7 @@
     <div class="card mb-4">
         <div class="card-header">
             <h3 class="card-title">
-                <a class="btn btn-success" href="{{ route('foods.create') }}">Thêm mới</a>
+                <a class="btn btn-success" href="{{ route('menu.create') }}">Thêm mới</a>
             </h3>
         </div>
         <div class="card-header">
@@ -42,7 +42,7 @@
                         <td>{{number_format($food->promotional_price)}}</td>
                         <td>{{date('H:i',strtotime($food->open_time))}}-{{date('H:i',strtotime($food->close_time))}}</td>
                         <td>
-                            <a href="{{route('foods.edit',['id'=>$food->id])}}" class="btn btn-primary">
+                            <a href="{{route('menu.edit',['id'=>$food->id])}}" class="btn btn-primary">
                                 <i class="fas fa-edit"></i>
                             </a>
                             <a data-id="{{$food->id}}"

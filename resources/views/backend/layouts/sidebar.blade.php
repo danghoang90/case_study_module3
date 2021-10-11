@@ -26,7 +26,7 @@
                     <div class="collapse" id="collapseFoods" aria-labelledby="headingOne"
                          data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="{{route('foods.index')}}">Danh sách món ăn</a>
+                            <a class="nav-link" href="{{route('menu.index')}}">Danh sách món ăn</a>
                         </nav>
                     </div>
                 </div>
