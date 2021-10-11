@@ -21,8 +21,6 @@
 		    		<span class="navbar-toggler-icon"></span>
 		 		</button>
 			  	<div class="collapse navbar-collapse" id="navbarText">
-
-
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="#Menu">Menu</a>
@@ -45,6 +43,7 @@
                             <a class="nav-link" href="{{route('auth.logout')}}">Logout</a>
                         </li>
                         @endif
+
 					    <li class="nav-item">
 					    	<a href="#" class="language" rel="it-IT"><img src="images/italy.ico" class="flag" alt="Italiano"></a>
 					    	<a href="index.blade.php" class="language" rel="en-En"><img src="images/english.ico" class="flag" alt="English"></a>
