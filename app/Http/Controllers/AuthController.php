@@ -21,7 +21,7 @@ class AuthController extends Controller
     {
         $data = $request->only('email', 'password');
         if (Auth::attempt($data)) {
-            dd(1);
+            return view('home.index');
         } else {
             session()->flash('error-login', 'Tài khoản không tồn tại');
             return back();
@@ -46,5 +46,11 @@ class AuthController extends Controller
 
         Session::flash('success', 'Đăng ký thành công');
         return redirect()->route('auth.formLogin');
+    }
+
+    function logout()
+    {
+        Auth::logout();
+        return redirect('home');
     }
 }

@@ -5,14 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Food extends Model
+class Tag extends Model
 {
-    protected $table = 'foods';
-
     use HasFactory;
 
-    function tags()
+    function food()
     {
-        return $this->hasMany(Tag::class);
+        return $this->belongsTo(Food::class);
     }
 }
