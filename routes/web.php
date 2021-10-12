@@ -37,5 +37,13 @@ Route::prefix('foods')->group(function () {
     Route::post('{id}/edit', [FoodController::class, 'update'])->name('foods.update');
     Route::get('/{id}/destroy', [FoodController::class, 'destroy'])->name('foods.destroy');
 });
-
-
+Route::prefix('home')->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home.index');
+    Route::get('/search-food', [HomeController::class, 'searchFood']);
+    Route::get('/find-food/{idFood}', [HomeController::class, 'findFood']);
+    Route::get('/pagination', [HomeController::class, 'fetch_data']);
+});
+Route::get('/login', [AuthController::class, 'showFormLogin'])->name('auth.formLogin');
+Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
+Route::get('/register', [AuthController::class, 'showFormRegister'])->name('auth.formRegister');
+Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
