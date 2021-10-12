@@ -20,6 +20,7 @@ Route::get('/login', [AuthController::class, 'showFormLogin'])->name('auth.formL
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::get('/register', [AuthController::class, 'showFormRegister'])->name('auth.formRegister');
 Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
+
 Route::get('logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 Route::get('auth/redirect/{provider}', [SocialController::class, 'redirect']);
