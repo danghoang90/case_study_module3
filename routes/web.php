@@ -22,6 +22,8 @@ Route::get('/register', [AuthController::class, 'showFormRegister'])->name('auth
 Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
 
 Route::get('logout', [AuthController::class, 'logout'])->name('auth.logout');
+
+Route::get('logout', [AuthController::class, 'logout'])->name('auth.logout');
 Route::get('auth/redirect/{provider}', [SocialController::class, 'redirect']);
 Route::get('callback/{provider}', [SocialController::class, 'callback']);
 
