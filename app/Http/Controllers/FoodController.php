@@ -94,4 +94,5 @@ class FoodController extends Controller
         $food->delete();
         return response()->json('Xóa món ăn thành công');
     }
+
 }
