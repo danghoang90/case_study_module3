@@ -1,4 +1,5 @@
 <html>
+<<<<<<< HEAD
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -98,6 +99,102 @@
 </div>
 <!--- End of Carousel -->
 <!--- Restaurant-->
+=======
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>
+		<link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+
+    	<title>Italian Restaurant</title>
+    	<link rel="icon" href="images/logo.png">
+	</head>
+	<body data-spy="scroll" data-target=".navbar" data-offset="50">
+	  	<div id="Welcome">
+	  		<!---Start navigation Bar -->
+	    	<nav class="navbar navbar-expand-lg navbar fixed-top  navbar-light bg-light">
+		 		<a class="navbar-brand" href="#Welcome">
+    				<img src="images/logo.png" width="50" height="50" class="d-inline-block" alt=""> Italian Restaurant
+		 		</a>
+		 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+		    		<span class="navbar-toggler-icon"></span>
+		 		</button>
+			  	<div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Menu">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#List">List</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('auth.formLogin')}}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('auth.formRegister')}}">Register</a>
+                        </li>
+                        @if(\Illuminate\Support\Facades\Auth::check())
+			      		<li class="nav-item">
+			        		<a class="nav-link" href="#Welcome">Welcome {{auth()->user()->name}}</a>
+			      		</li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('auth.logout')}}">Logout</a>
+                        </li>
+                        @endif
+
+					    <li class="nav-item">
+					    	<a href="#" class="language" rel="it-IT"><img src="images/italy.ico" class="flag" alt="Italiano"></a>
+					    	<a href="index.blade.php" class="language" rel="en-En"><img src="images/english.ico" class="flag" alt="English"></a>
+					    </li>
+				    </ul>
+				</div>
+			</nav>
+			<!--- End Navigation Bar -->
+			<!--- Start Carousel -->
+			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+				    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+				    	<img class="d-block w-100 img-fluid img-slider" src="https://afamilycdn.com/2019/12/1/photo-1575164080086-1575164080095165449684.png" alt="First slide">
+				    	<div class="carousel-caption">
+						    <h2>Welcome!</h2>
+							<p>...</p>
+						</div>
+				    </div>
+				    <div class="carousel-item">
+				      	<img class="d-block w-100 img-fluid img-slider" src="https://duyendangvietnam.net.vn/public/uploads/files/3(307).jpg" alt="Second slide">
+				      	<div class="carousel-caption">
+						    <h2>Traditional Italian Cuisine</h2>
+							<p>...</p>
+						</div>
+				    </div>
+				    <div class="carousel-item">
+				      	<img class="d-block w-100 img-fluid img-slider" src="https://www.disneycooking.com/wp-content/uploads/2018/12/mon-khai-vi-dai-tiec.jpg" alt="Third slide">
+				      	<div class="carousel-caption">
+						    <h2>Selected Products</h2>
+							<p>...</p>
+						</div>
+				    </div>
+				</div>
+				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+			<!--- End of Carousel -->
+			<!--- Restaurant-->
 
 <!--		<div class="container">-->
 <!--		 	<div class="row" id="Restaurant">-->

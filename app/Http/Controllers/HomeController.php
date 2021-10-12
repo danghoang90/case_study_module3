@@ -14,15 +14,6 @@ class HomeController extends Controller
         $discountFoods = Food::all()->sortBy('discount_food');
         return view('home.index', compact('foods', 'viewsFoods', 'discountFoods'));
     }
-
-//    public function fetch_data(Request $request)
-//    {
-//        if ($request->ajax()) {
-//            $foods = Food::paginate(4);
-//            return view('home.index', compact('foods'))->render();
-//        }
-//    }
-
     function searchFood(Request $request)
     {
         $keyword = $request->keyword;

@@ -47,4 +47,10 @@ class AuthController extends Controller
         Session::flash('success', 'Đăng ký thành công');
         return redirect()->route('auth.formLogin');
     }
+
+    function logout()
+    {
+        Auth::logout();
+        return redirect('home');
+    }
 }

@@ -66,18 +66,31 @@ $(document).ready(function () {
                 $('#list-food-search').html('');
             }
         })
-        // $(document).on('click', '.pagination', function (event) {
-        //     event.preventDefault();
-        //     let page = $(this).attr('href').split('page=')[1];
-        //     fetch_data(page);
-        // });
-        // function fetch_data(page) {
-        //     $.ajax({
-        //         url: origin + "/home?page=" + page,
-        //         success: function (food) {
-        //             $('#food-list').html(food);
-        //         }
-        //     })
-        // }
     });
+    let getUrlParameter = function getUrlParameter(sParam) {
+        let sPageURL = window.location.search.substring(1),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return typeof sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+            }
+        }
+        return false;
+    };
+
+    if(getUrlParameter('page')){
+        window.location.hash = "#List";
+        // $('html, body').animate({
+        //     scrollTop: $("#List").offset().top
+        // }, 1000, function(){
+        //
+        //     // Add hash (#) to URL when done scrolling (default click behavior)
+        //     window.location.hash = "#List";
+        // });
+    }
 })
