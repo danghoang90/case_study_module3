@@ -11,29 +11,46 @@
                         <div class="input-group">
                             <input class="input--style-2" type="text" placeholder="Name" name="name">
                         </div>
+                        @error('name')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                         <div class="input-group">
                             <input class="input--style-2" type="email" placeholder="Email" name="email">
                         </div>
+                        @error('email')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                         <div class="input-group">
                             <input class="input--style-2" type="number" placeholder="Phone Number" name="phone">
                         </div>
+                        @error('phone')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                         <div class="input-group">
                             <input class="input--style-2" type="text" placeholder="Address" name="address">
                         </div>
+                        @error('address')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                         <div class="input-group">
                             <input class="input--style-2" type="password" placeholder="Password" name="password">
                         </div>
+                        @error('password')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
                                 <select name="role">
                                     <option disabled="disabled" selected="selected">Role</option>
-                                    <option>User</option>
-                                    <option>Customer</option>
+                                    <option value="collaborator">Collaborator</option>
+                                    <option value="customer">Customer</option>
                                 </select>
                                 <div class="select-dropdown"></div>
                             </div>
                         </div>
-
+                        @error('role')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                         <div class="p-t-30">
                             <button class="btn btn--radius btn--green" type="submit">SIGN UP</button>
                         </div>
